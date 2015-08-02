@@ -1,0 +1,70 @@
+﻿@model TestMoveIdentity.Models.ManageLoginsViewModel
+@using Microsoft.Owin.Security
+@{
+    ViewBag.Title = "Administrar los inicios de sesión externos";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                No hay servicios de autenticación externos configurados. Consulte <a href="http://go.microsoft.com/fwlink/?LinkId=313242">este artículo</a>
+                para obtener más información acerca de la configuración de esta aplicación ASP.NET para admitir el inicio de sesión mediante servicios externos.
+            </p>
+        </div>
+    }
+    else
+    {
+        if (Model.CurrentLogins.Count > 0)
+        {
+            <h4>Inicios de sesión registrados</h4>
+            <table class="table">
+                <tbody>
+                    @foreach (var account in Model.CurrentLogins)
+                    {
+                        <tr>
+                            <td>@account.LoginProvider</td>
+                            <td>
+                                @if (ViewBag.ShowRemoveButton)
+                                {
+                                    using (Html.BeginForm("RemoveLogin", "Manage"))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div>
+                                            @Html.Hidden("loginProvider", account.LoginProvider)
+                                            @Html.Hidden("providerKey", account.ProviderKey)
+                                            <input type="submit" class="btn btn-default" value="Quitar" title="Quitar este inicio de sesión @account.LoginProvider de su cuenta" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    @: &nbsp;
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        if (Model.OtherLogins.Count > 0)
+        {
+            using (Html.BeginForm("LinkLogin", "Manage"))
+            {
+                @Html.AntiForgeryToken()
+                <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in Model.OtherLogins)
+                    {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Iniciar sesión con la cuenta @p.Caption">@p.AuthenticationType</button>
+                    }
+                </p>
+                </div>
+            }
+        }
+    }
+}

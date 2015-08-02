@@ -1,0 +1,17 @@
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Foco.MSIdentity.dll.config
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Foco.MSIdentity.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Foco.MSIdentity.pdb
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\EntityFramework.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\EntityFramework.xml
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\es\EntityFramework.resources.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\es\Microsoft.AspNet.Identity.Core.resources.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.dll
+c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.pdb

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Owin.Security.Twitter</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider">
+      <summary>Especifica los métodos de devolución de llamada que el objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware" /> invoca para habilitar el control del desarrollador sobre el proceso de autenticación./&amp;amp;gt;</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext)">
+      <summary>Se invoca cuando Twitter autentica un usuario correctamente</summary>
+      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+      <param name="context">Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext)">
+      <summary>Se invoca antes de que el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> se guarde en una cookie local y el explorador se redirija a la dirección URL solicitada originalmente.</summary>
+      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext">
+      <summary>Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,System.String,System.String,System.String,System.String)">
+      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext" /></summary>
+      <param name="context">El entorno OWIN.</param>
+      <param name="userId">Identificador del usuario de Twitter</param>
+      <param name="screenName">Nombre de pantalla de Twitter</param>
+      <param name="accessToken">Token de acceso de Twitter</param>
+      <param name="accessTokenSecret">El secreto del token de acceso de Twitter</param>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.AccessToken">
+      <summary>Obtiene el token de acceso de Twitter</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.AccessTokenSecret">
+      <summary>Obtiene el secreto del token de acceso de Twitter</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.Identity">
+      <summary>Obtiene el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> que representa el usuario</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.Properties">
+      <summary>Obtiene o establece un contenedor de propiedades para las propiedades de autenticación comunes</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.ScreenName">
+      <summary>Obtiene el nombre de pantalla de Twitter</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.UserId">
+      <summary>Obtiene el identificador de usuario de Twitter</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware">
+      <summary>Middleware de OWIN para la autenticación de usuarios mediante Twitter</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Owin.IAppBuilder,Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions)">
+      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware" /></summary>
+      <param name="next">El siguiente middleware en la canalización OWIN que se debe invocar</param>
+      <param name="app">La aplicación OWIN</param>
+      <param name="options">Las opciones de configuración del middleware</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware.CreateHandler">
+      <summary>Proporciona el objeto <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler" /> para el procesamiento de las solicitudes relacionadas con la autenticación.</summary>
+      <returns>Un objeto <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler" /> configurado con el objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions" /> que se proporciona al constructor.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions">
+      <summary>Opciones del middleware de autenticación de Twitter.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.#ctor">
+      <summary>Inicializa una nueva instancia de la clase <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions" />.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.BackchannelCertificateValidator">
+      <summary>Obtiene o establece un validador de certificado anclado que se usará para validar los extremos que se usan en las comunicaciones de canal secundario que pertenecen a Twitter.</summary>
+      <returns>El validador de certificado anclado.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.BackchannelHttpHandler">
+      <summary>El objeto HttpMessageHandler que se usa para comunicarse con Twitter.Esto no puede establecerse al mismo tiempo que el objeto BackchannelCertificateValidator a menos que el valor se pueda convertir a tipo heredado de un objeto WebRequestHandler.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.BackchannelTimeout">
+      <summary>Obtiene o establece un valor de tiempo de espera en milisegundos para las comunicaciones de canal secundario con Twitter.</summary>
+      <returns>El tiempo de espera del canal secundario.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.CallbackPath">
+      <summary>La ruta de acceso de la solicitud en la ruta de acceso base de la aplicación en la que se devolverá el agente de usuario.El middleware procesará esta solicitud cuando llegue.El valor predeterminados es "/signin-twitter".</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.Caption">
+      <summary>Obtiene o establece el texto que el usuario puede mostrar en una interfaz de usuario de inicio de sesión.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.ConsumerKey">
+      <summary>Obtiene o establece la clave de consumidor para comunicarse con Twitter.</summary>
+      <returns>La clave de consumidor que se usa para comunicarse con Twitter.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.ConsumerSecret">
+      <summary>Obtiene o establece el secreto de consumidor que se usa para firmar solicitudes a Twitter.</summary>
+      <returns>El secreto de consumidor que se usa para firmar solicitudes a Twitter.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.Provider">
+      <summary>Obtiene o establece el objeto <see cref="T:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider" /> que se utiliza para controlar los eventos de autenticación.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.SignInAsAuthenticationType">
+      <summary>Obtiene o establece el nombre de otro middleware de autenticación que será responsable de emitir realmente un objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> de usuario.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.StateDataFormat">
+      <summary>Obtiene o establece el tipo que se usa para proteger los datos que controla el middleware.</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider">
+      <summary>Implementación de <see cref="T:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider" /> predeterminada.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.#ctor">
+      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider" /></summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext)">
+      <summary>Se invoca cuando Twitter autentica un usuario correctamente</summary>
+      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+      <param name="context">Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</param>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.OnAuthenticated">
+      <summary>Obtiene o establece la función que se invoca cuando se invoca el método Authenticated.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.OnReturnEndpoint">
+      <summary>Obtiene o establece la función que se invoca cuando se invoca el método ReturnEndpoint.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext)">
+      <summary>Se invoca antes de que el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> se guarde en una cookie local y el explorador se redirija a la dirección URL solicitada originalmente.</summary>
+      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext">
+      <summary>Proporciona información de contexto a los proveedores de middleware.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket)">
+      <summary>Inicializa un <see cref="T:Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext" /> nuevo.</summary>
+      <param name="context">Entorno OWIN</param>
+      <param name="ticket">El vale de autenticación.</param>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.Messages.AccessToken">
+      <summary>Token de acceso de Twitter</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.AccessToken.#ctor"></member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.AccessToken.ScreenName">
+      <summary>Obtiene o establece el nombre de pantalla de Twitter</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.AccessToken.UserId">
+      <summary>Obtiene o establece el identificador de usuario de Twitter</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.Messages.RequestToken">
+      <summary>Token de solicitud de Twitter</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestToken.#ctor"></member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.CallbackConfirmed"></member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.Properties">
+      <summary>Obtiene o establece un contenedor de propiedades para las propiedades de autenticación comunes</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.Token">
+      <summary>Obtiene o establece el token de Twitter</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.TokenSecret">
+      <summary>Obtiene o establece el secreto del token de Twitter</summary>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer">
+      <summary>Serializa y deserializa los tokens de solicitud y acceso de Twitter para que los puedan usar otros componentes de aplicación.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.#ctor"></member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Deserialize(System.Byte[])">
+      <summary>Deserializa un token de solicitud</summary>
+      <returns>El token de solicitud de Twitter</returns>
+      <param name="data">Una matriz de bytes que contiene el token serializado</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Read(System.IO.BinaryReader)">
+      <summary>Lee un token de solicitud de Twitter de una serie de bytes.Lo usa el método <see cref="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Deserialize(System.Byte[])" />.</summary>
+      <returns>El token</returns>
+      <param name="reader">El lector que se usa para la lectura de los bytes del token</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Serialize(Microsoft.Owin.Security.Twitter.Messages.RequestToken)">
+      <summary>Serializa un token de solicitud</summary>
+      <returns>Una matriz de bytes que contiene el token serializado</returns>
+      <param name="model">El token que se va a serializar</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Write(System.IO.BinaryWriter,Microsoft.Owin.Security.Twitter.Messages.RequestToken)">
+      <summary>Escribe un token de solicitud de Twitter como una serie de bytes.Lo usa el método <see cref="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Serialize(Microsoft.Owin.Security.Twitter.Messages.RequestToken)" />.</summary>
+      <param name="writer">El editor que se usa en la escritura del token</param>
+      <param name="token">El token que se va a escribir.</param>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Twitter.Messages.Serializers">
+      <summary>Proporciona acceso a un serializador de token de solicitud</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Twitter.Messages.Serializers.RequestToken">
+      <summary>Obtiene o establece un objeto de serializador disponible estáticamente.El valor de esta propiedad será <see cref="T:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer" /> de forma predeterminada.</summary>
+    </member>
+    <member name="T:Owin.TwitterAuthenticationExtensions">
+      <summary>Métodos de extensión para usar <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware" /></summary>
+    </member>
+    <member name="M:Owin.TwitterAuthenticationExtensions.UseTwitterAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions)">
+      <summary>Autenticar usuarios mediante Twitter</summary>
+      <returns>El objeto <see cref="T:Owin.IAppBuilder" /> actualizado</returns>
+      <param name="app">El objeto <see cref="T:Owin.IAppBuilder" /> se pasa al método de configuración</param>
+      <param name="options">Opciones de configuración de middleware</param>
+    </member>
+    <member name="M:Owin.TwitterAuthenticationExtensions.UseTwitterAuthentication(Owin.IAppBuilder,System.String,System.String)">
+      <summary>Autenticar usuarios mediante Twitter</summary>
+      <returns>El objeto <see cref="T:Owin.IAppBuilder" /> actualizado</returns>
+      <param name="app">El objeto <see cref="T:Owin.IAppBuilder" /> se pasa al método de configuración</param>
+      <param name="consumerKey">La clave de consumidor que emite Twitter</param>
+      <param name="consumerSecret">El secreto de la clave de consumidor que emite Twitter</param>
+    </member>
+  </members>
+</doc>
