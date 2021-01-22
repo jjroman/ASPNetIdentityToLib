@@ -15,3 +15,23 @@ c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSId
 c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\bin\Debug\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.dll
 c:\users\javier\documents\visual studio 2013\Projects\TestMoveIdentity\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.pdb
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Foco.MSIdentity.dll.config
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Foco.MSIdentity.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Foco.MSIdentity.pdb
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\EntityFramework.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\EntityFramework.xml
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\es\EntityFramework.resources.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\es\Microsoft.AspNet.Identity.Core.resources.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\bin\Debug\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.csprojAssemblyReference.cache
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.csproj.CoreCompileInputs.cache
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.csproj.CopyComplete
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.dll
+D:\GitHub\ASPNetIdentityToLib\Foco.MSIdentity\obj\Debug\Foco.MSIdentity.pdb
